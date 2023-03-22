@@ -1,11 +1,14 @@
 package assignment;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class StringCharacters1 {
 
     public static void main(String[] args) {
+
+        System.out.println(isUnique(null));
         System.out.println(isUnique(""));
         System.out.println(isUnique(" "));
         System.out.println(isUnique("e"));
@@ -16,17 +19,13 @@ public class StringCharacters1 {
     }
 
     private static boolean isUnique(String str) {
-        // Creating an arrayList for storing the character of the string
-        List<Character> charList = new ArrayList<>();
 
-        for (int i = 0; i < str.length(); i++){
-            if (charList.contains(str.charAt(i))) {
-                return false;
-            } else {
-                charList.add(str.charAt(i));
-            }
+        if (str == null) return true;
+
+        HashSet<Character> charSet = new HashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+            charSet.add(str.charAt(i));
         }
-        return true;
+        return str.length() == charSet.size();
     }
-
 }
