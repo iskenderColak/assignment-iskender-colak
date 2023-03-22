@@ -20,12 +20,20 @@ public class StringCharacters1 {
 
     private static boolean isUnique(String str) {
 
+        // If the string is null, return true
         if (str == null) return true;
 
+        // Creating a hashSet
+        // Duplicates are not allowed in HashSet
         HashSet<Character> charSet = new HashSet<>();
+
+        // Inserting character of String into hashSet
         for (int i = 0; i < str.length(); i++) {
             charSet.add(str.charAt(i));
         }
+
+        // If length of string is equal to size of hashSet
+        // then there is no duplicate characters in string
         return str.length() == charSet.size();
     }
 }
