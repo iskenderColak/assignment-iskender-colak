@@ -3,8 +3,8 @@ package assignment;
 public class SumOfTwoNumbers {
 
     public static void main(String[] args) {
-        System.out.println(Add1(3, 5));
-        System.out.println(Add2(3, 5));
+        System.out.println(Add1(3, 5)); // 8
+        System.out.println(Add2(3, 5)); // 8
     }
 
     private static int Add1(int a, int b) {
