@@ -21,3 +21,9 @@ CREATE INDEX member_country ON member (country);
 -- Then we order the records by the registration_time as desc to get the last registered users
 -- Then we apply 'limit' to get the only 50 of the members
 SELECT * FROM member WHERE name LIKE 'Jamal%' ORDER BY registration_time DESC limit 50;
+
+-- In order to increase the performance of the query above, we need to create some indexes.
+CREATE INDEX member_registration_time ON member (registration_time);
+-- 1. The above index (over registration_time column) is needed for making time calculation faster.
+CREATE INDEX member_name ON member (name);
+-- 1. The above index (over member column) is needed for more performance.

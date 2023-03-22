@@ -18,7 +18,7 @@ public class SumOfTwoNumbers {
 
         // We start from 1 and move until the value of second number,
         // in for loop first number is incremented.
-        for (int i = 1; i <= b ; i++) {
+        for (int i = 1; i <= b; i++) {
             a++;
         }
         return a;
