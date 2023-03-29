@@ -1,5 +1,6 @@
 package assignment;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class StringCharacters {
@@ -27,6 +28,8 @@ public class StringCharacters {
         System.out.println(isUniqueWithoutDS("exe")); // false
         System.out.println(isUniqueWithoutDS("tree"));// false
         System.out.println(isUniqueWithoutDS("home"));// true
+
+        printFrequency("iskendercolak");
     }
 
     // Method with data structure.
@@ -80,5 +83,24 @@ public class StringCharacters {
 
         // If we do not encounter any duplicate character, return true
         return true;
+    }
+
+    private static void printFrequency(String str) {
+
+        int n = str.length();
+        int[] freq = new int[26];
+
+        for (int i = 0; i < n; i++) {
+            freq[str.charAt(i) - 'a']++;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (freq[str.charAt(i) - 'a'] != 0) {
+                System.out.print(str.charAt(i));
+                System.out.print(freq[str.charAt(i) - 'a'] + " ");
+                freq[str.charAt(i) - 'a'] = 0;
+            }
+        }
+
     }
 }
