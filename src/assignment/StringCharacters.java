@@ -29,6 +29,18 @@ public class StringCharacters {
         System.out.println(isUniqueWithoutDS("tree"));// false
         System.out.println(isUniqueWithoutDS("home"));// true
 
+        System.out.println("---------------------------------");
+
+        System.out.println(isUnique(null));  // true
+        System.out.println(isUnique(""));    // true
+        System.out.println(isUnique(" "));   // true
+        System.out.println(isUnique("  "));  // false
+        System.out.println(isUnique("e"));   // true
+        System.out.println(isUnique("ee"));  // false
+        System.out.println(isUnique("exe")); // false
+        System.out.println(isUnique("tree"));// false
+        System.out.println(isUnique("home"));// true
+
         printFrequency("iskendercolak");
     }
 
@@ -82,6 +94,18 @@ public class StringCharacters {
         }
 
         // If we do not encounter any duplicate character, return true
+        return true;
+    }
+
+    private static boolean isUnique(String str) {
+        if (str == null || str.length() < 2) return true;
+        if (str.isBlank()) return false;
+
+        for (int i = 0; i < str.length(); i++) {
+            char each = str.charAt(i);
+            if (str.indexOf(each) != str.lastIndexOf(each))
+                return false;
+        }
         return true;
     }
 
